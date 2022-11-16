@@ -49,6 +49,17 @@ class RadioTest {
     }
 
     @Test
+    public void shouldSetStationBelowMin() {
+        Radio radio = new Radio();
+        radio.setCurrentRadioStation(-1);
+
+        int expected = 0;
+        int actual = radio.getCurrentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void setNextStation() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(5);
@@ -139,6 +150,28 @@ class RadioTest {
 
         int expected = 8;
         int actual = volume.getSoundVolume();
+    }
+
+    @Test
+    public void sholdSetVolumeOverMax() {
+        Radio volume = new Radio();
+        volume.setSoundVolume(11);
+
+        int expected = 0;
+        int actual = volume.getSoundVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sholdSetVolumeBelowMin() {
+        Radio volume = new Radio();
+        volume.setSoundVolume(-1);
+
+        int expected = 0;
+        int actual = volume.getSoundVolume();
+
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
