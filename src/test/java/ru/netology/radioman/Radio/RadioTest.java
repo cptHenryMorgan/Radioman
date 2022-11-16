@@ -38,6 +38,17 @@ class RadioTest {
     }
 
     @Test
+    public void shouldSetStationOverMax() {
+        Radio radio = new Radio();
+        radio.setCurrentRadioStation(10);
+
+        int expected = 0;
+        int actual = radio.getCurrentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void setNextStation() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(5);
