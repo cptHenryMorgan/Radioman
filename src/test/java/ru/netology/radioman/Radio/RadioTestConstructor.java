@@ -9,7 +9,7 @@ class RadioTestConstructor {
 
     @Test
     public void shouldSetMyCountStation() {
-        Radio radio = new Radio(20);
+        Radio radio = new Radio();
         radio.setCurrentRadioStation(15);
 
         int expected = 15;
@@ -20,7 +20,7 @@ class RadioTestConstructor {
 
     @Test
     public void shouldSetBorderMyCountStation() {
-        Radio radio = new Radio(20);
+        Radio radio = new Radio();
         radio.setCurrentRadioStation(19);
 
         int expected = 19;
@@ -31,7 +31,7 @@ class RadioTestConstructor {
 
     @Test
     public void shouldSetZeroMyCountStation() {
-        Radio radio = new Radio(20);
+        Radio radio = new Radio();
         radio.setCurrentRadioStation(0);
 
         int expected = 0;
@@ -42,7 +42,7 @@ class RadioTestConstructor {
 
     @Test
     public void setNextStation() {
-        Radio radio = new Radio(20);
+        Radio radio = new Radio();
         radio.setCurrentRadioStation(19);
 
         radio.nextStation();
@@ -56,7 +56,7 @@ class RadioTestConstructor {
 
     @Test
     public void setPreviousStation() {
-        Radio radio = new Radio(25);
+        Radio radio = new Radio();
         radio.setCurrentRadioStation(24);
 
         radio.prevStation();
