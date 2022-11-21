@@ -1,46 +1,20 @@
 package ru.netology.radioman.Radio;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Radio {
 
     private int currentRadioStation;
     private int soundVolume;
     private int maxCountStation;
 
-    public Radio() {
-        maxCountStation = 10;
-    }
-    public Radio(int stationCount) {
-        maxCountStation = stationCount - 1;
 
-    }
-
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
-
-    public void setCurrentRadioStation(int currentRadioStation) {
-        if (currentRadioStation < 0) {
-            return;
-        }
-        if (currentRadioStation > maxCountStation) {
-            return;
-        }
-        this.currentRadioStation = currentRadioStation;
-    }
-
-    public int getSoundVolume() {
-        return soundVolume;
-    }
-
-    public void setSoundVolume(int soundVolume) {
-        if (soundVolume < 0) {
-            return;
-        }
-        if (soundVolume > 100) {
-            return;
-        }
-        this.soundVolume = soundVolume;
-    }
 
     public void nextStation() {
         if (currentRadioStation < maxCountStation) {

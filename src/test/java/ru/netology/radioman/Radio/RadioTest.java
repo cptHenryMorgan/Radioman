@@ -122,7 +122,7 @@ class RadioTest {
 
         radio.prevStation();
 
-        int expected = 9;
+        int expected = 10;
         int actual = radio.getCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -155,7 +155,7 @@ class RadioTest {
     @Test
     public void sholdSetVolumeOverMax() {
         Radio volume = new Radio();
-        volume.setSoundVolume(11);
+        volume.setSoundVolume(101);
 
         int expected = 0;
         int actual = volume.getSoundVolume();
@@ -212,11 +212,11 @@ class RadioTest {
     @Test
     public void setIncreaseVolumeOverMax() {
         Radio volume = new Radio();
-        volume.setSoundVolume(10);
+        volume.setSoundVolume(100);
 
         volume.increaseVolume();
 
-        int expected = 10;
+        int expected = 100;
         int actual = volume.getSoundVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -264,11 +264,11 @@ class RadioTest {
     @Test
     public void setDecreaseVolumeFromMax() {
         Radio volume = new Radio();
-        volume.setSoundVolume(10);
+        volume.setSoundVolume(100);
 
         volume.decreaseVolume();
 
-        int expected = 9;
+        int expected = 99;
         int actual = volume.getSoundVolume();
 
         Assertions.assertEquals(expected, actual);
